@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+     body{
+     	background-color: black;
+     }
+.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	navbar-nav{
+     		text-align: right;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     		text-align: right;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	a{
+     		color: black;
+     	}
+     	a:hover{
+		color:#0311d6e8;
+	}
+	.thead{
+		background-color: #2b71c2b3;
+		text-align: center;
+	}
+	.thead a{
+		color: white;
+	}
+	table{
+		width:100%;
+		
+	}
+	.navhead{
+		background-color: #2b71c2b3;
+		width:125%;
+	}
+	.cont{
+		padding: 5%;
+		padding-top:1%;
+	}
+	.reshead{
+		font-size: 150%;
+		font-size:bold;
+	}
+	.rhead{
+		font-size: 250%;
+		font-size:bold;
+	}
+	.cardhead{
+		width:100%;
+		padding: 10%;
+		padding-top:5%;
+		padding-bottom: 2%;
+	}
+	.card{
+		background-color: #2b71c2b3;
+		color: white;
+	}
+	.card-header{
+		font-size: 200%;
+	}
+	.card-text{
+		font-size: 115%;
+	}
+	.card-more{
+		text-align: center;
+		font-size: 115%;
+	}
+	.dashhead{
+		background-color:  #2b71c2b3;
+		width: 100%;
+		height: 40%;
+		color: white;
+	}
+	.cardtt{
+		color: white;
+		font-size:130%;
+	}
+	a:hover{
+		color:#0311d6e8;
+	}
+	.card-body{
+		font-size: 150%;
+	}
+	.btn{
+		color:white;
+	}
+	
+    </style> 	
+</head>
+<body>
+
+<nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">BLUE LAND SCHOOLS</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+             <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/dashboard}" >Home</a>
+      </li>
+      <form class="d-flex" role="search" th:action="@{/results}" name="keyword">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" th:value="${keyword}" required />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+          </ul>
+      </nav>
+
+
+<div class="cardhead" th:each = "question: ${listQuestions}">
+      <div class="card text-bg-primary mb-3">
+  <div class="card-header">Welcome</div>
+  <div class="card-body">
+    <p class="card-text">You are welcome to BLUE LAND SCHOOLS</p>
+     <div sec:authorize="isAuthenticated()">
+    <p>You are logged in as: <span sec:authentication="name"></span></p>
+   <p>SEAT NUMBER: <span th:text="${question.rollNo}"></span></p>
+   <p>Level: Senior</p>
+   <p>DEPARTMENT: Science</p>
+  </div>
+  </div>
+</div>
+</div>
+
+
+	<div class="cont">	
+		
+	<table class="table table-borderless table-dark">
+    <thead>
+    
+      
+      <tr class="rhead" >
+        <td colspan="1">Subject</td>
+        <td rowspan="2">Test(40)</td>
+        <td rowspan="2">Exam(60)</td>
+        <td rowspan="2">Total(100)</td>
+        
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Mathematics</td>
+        <td th:text = "${question.s1}"></td>
+        <td th:text = "${question.s2}"></td>
+        <td th:text = "${question.s3}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">English</td>
+        <td th:text = "${question.s4}"></td>
+        <td th:text = "${question.s5}"></td>
+        <td th:text = "${question.s6}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Physics</td>
+        <td th:text = "${question.s7}"></td>
+        <td th:text = "${question.s8}"></td>
+        <td th:text = "${question.s9}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Chemistry</td>
+        <td th:text = "${question.s10}"></td>
+        <td th:text = "${question.s11}"></td>
+        <td th:text = "${question.s12}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Biology</td>
+        <td th:text = "${question.s13}"></td>
+        <td th:text = "${question.s14}"></td>
+        <td th:text = "${question.s15}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Economics</td>
+        <td th:text = "${question.s16}"></td>
+        <td th:text = "${question.s17}"></td>
+        <td th:text = "${question.s18}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Book Keeping</td>
+        <td th:text = "${question.s19}"></td>
+        <td th:text = "${question.s20}"></td>
+        <td th:text = "${question.s21}"></td>
+      </tr>
+       <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Further Mathematics</td>
+        <td th:text = "${question.s22}"></td>
+        <td th:text = "${question.s23}"></td>
+        <td th:text = "${question.s24}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="reshead">Computer Studies</td>
+        <td th:text = "${question.s25}"></td>
+        <td th:text = "${question.s26}"></td>
+        <td th:text = "${question.s27}"></td>
+      </tr>
+      <tr th:each = "question: ${listQuestions}">
+        <td class="rhead">TOTAL</td>
+        <td th:text = "${question.s28}"></td>
+        <td th:text = "${question.s29}"></td>
+        <td th:text = "${question.s30}"></td>
+      </tr>
+    </tbody>
+  </table>
+	
+		
+		
+	</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Drill Board</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <style type="text/css">
+ 
+ .navbar-brand{
+ 	font-size: 200%;
+ 	color: white;
+ }
+ .navbar{
+ 	background-color: #2b71c2b3;
+ }
+.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+ .not{
+ 	color:red;
+ }
+ .week h2{
+ 	text-align: center;
+ 	color: #2b71c2b3;
+ 	
+ }
+ </style>
+</head>
+<body>
+
+<p sec:authorize="hasRole('ADMIN')">
+
+<nav class="navbar navbar-expand-md">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Drill Board</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/dashboard}" >Home</a>
+      </li>
+      <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/drill|}" th:text="'Drill'">Drill</a>
+        </li>
+       
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+	<div class = "container">
+	
+	<div class="week">
+		<h2>SS 2 WEEKLY DRILL</h2>
+	</div>
+		<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">SUBJECT</th>
+      <th scope="col">STATUS</th>
+      <th scope="col">Drill</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mathematics</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>English</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+     <tr>
+      <th scope="row">3</th>
+      <td>Physics</td>
+      <td class="not">Not Available</td>
+      <td>Click here</td>
+    </tr>
+     <tr>
+      <th scope="row">4</th>
+      <td>Chemistry</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+     <tr>
+      <th scope="row">5</th>
+      <td>Biology</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+     <tr>
+      <th scope="row">6</th>
+      <td>Geography</td>
+      <td class="not">Not Available</td>
+      <td>Click here</td>
+    </tr>
+     <tr>
+      <th scope="row">7</th>
+      <td>Further Mathematics</td>
+      <td class="not">Not Available</td>
+      <td>Click here</td>
+    </tr>
+     <tr>
+      <th scope="row">8</th>
+      <td>Commerce</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+     <tr>
+      <th scope="row">9</th>
+      <td>Financial Accounting</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Economics</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Government</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Literature</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>Food And Nutrition</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+    <tr>
+      <th scope="row">8</th>
+      <td>CRS</td>
+      <td>Available</td>
+      <td>Click here</td>
+    </tr>
+  </tbody>
+</table>	
+	</div>
+</body>
+</html>

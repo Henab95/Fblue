@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <meta charset="UTF-8">
+    <title>Student Portal</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+     
+     body{
+     	background-color:  #0b0e1ae8;	
+     	}
+     	.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	
+	.homeback h1{
+		color: white;
+		padding-top: 10vh;
+		font-size:700%;
+		text-align: center;
+	}
+	.homeback p{
+	color: white;
+	text-align: center;
+	font-size:150%;
+	}
+	.homeback h3{
+	color: white;
+	text-align: center;
+	font-size:300%;
+	}
+	.cardhead{
+		width:100%;
+		padding: 10%;
+	}
+	.card{
+		background-color: #2b71c2b3;
+		color: white;
+	}
+	.card-header{
+		font-size: 200%;
+	}
+	.card-text{
+		font-size: 115%;
+	}
+	.card-more{
+		text-align: center;
+		font-size: 115%;
+	}
+	.dashhead{
+		background-color:  #2b71c2b3;
+		width: 100%;
+		height: 40%;
+		color: white;
+	}
+	.cardtt{
+		color: white;
+		font-size:130%;
+	}
+	a:hover{
+		color:#0311d6e8;
+	}
+     </style>    
+       
+       
+</head>
+<body>
+        
+   <p sec:authorize="hasRole('ADMIN')">      
+        
+       <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">BLUE LAND SCHOOLS</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/dashboard}" >Home</a>
+      </li>
+                <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/drill|}" th:text="'Drill'">Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/results?keyword=Enter Your Seat No|}" th:text="'My Results'">Staffs</a>
+            </li>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+          </ul>
+      </nav>
+      
+      
+      
+       <div class="cardhead">
+      <div class="card text-bg-primary mb-3">
+  <div class="card-header">Welcome</div>
+  <div class="card-body">
+    <p class="card-text">You are welcome to BLUE LAND SCHOOLS</p>
+     <div sec:authorize="isAuthenticated()">
+    <p>You are logged in as: <span sec:authentication="name"></span></p>
+   
+  </div>
+  </div>
+</div>
+<div class="card text-bg-info mb-3">
+  <div class="card-header">Date Of Submission (DRILL)</div>
+  <div class="card-body">
+    <p class="card-text">All drills should be submitted on or before 8:30am on Monday to the Subject Teacher</p>
+  </div>
+</div>
+
+ <div class="card text-bg-info mb-3">
+  <div class="card-header">Ongoing Registrations</div>
+  <div class="card-body">
+    <p class="card-more">
+    WAEC<br>
+    NECO<br>
+    TOEFL<br>
+    SAT<br>
+    GCE<br>
+    COWBELLPEDIA<br>
+    
+    Visit the Admin Office for more inquiry
+    </p>
+  </div>
+</div>
+</div>
+
+
+
+</div>
+
+<div class="dashhead">
+<div class="card text-bg-info mb-3">
+  <div class="card-header">School Calender</div>
+  <div class="card-body">
+    <p class="cardtt">2ND TERM<br>
+*Resumption Date: Monday 9th January, 2023<br>
+*First Half: Monday 9th January - Friday 17th February, 2023 (30 Days)<br>
+*Open Day:<br>
+Wednesday 22nd February, 2023 - Primary (1 Day)<br>
+Thursday 23rd February, 2023 - Secondary (1 Day)<br>
+*Mid-Term Break: Friday 24th February - Friday 3rd March, 2023 (6 Days)<br>
+*SECOND HALF; Monday 6th March - Thursday 6th April, 2023 (29 Days)<br>
+*CELEBRATIONS:<br>
+Good Friday: Friday 7th April, 2023 (1 Day)<br>
+Easter Monday: Monday 10th April, 2023 (1 Day)<br>
+Eid-ul-Fitri: Friday 21st - Monday 24th April, 2023 (2 Days)<br>
+*Vacation: Monday 10th - Friday 21st April, 2023 (10 Days)<br><br>
+
+TOTAL DAYS IN SCHOOL FOR SECOND TERM: (59 DAYS)</p>
+  </div>
+</div>
+</div>
+
+</div>
+      
+      
+        
+
+</body>
+</html>

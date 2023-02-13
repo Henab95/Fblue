@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	navbar-nav{
+     		text-align: right;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     		text-align: right;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	a{
+     		color: black;
+     	}
+     	a:hover{
+		color:#0311d6e8;
+	}
+	.thead{
+		background-color: #2b71c2b3;
+		text-align: center;
+	}
+	.thead a{
+		color: white;
+	}
+	table{
+		width:100%;
+	}
+	.navhead{
+		background-color: #2b71c2b3;
+		width:125%;
+	}
+	.cont{
+		padding: 5%;
+	}
+	
+    </style> 	
+</head>
+<body>
+
+<div class="navhead">
+
+<nav class="navbar navbar-expand-md">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">BLUE LAND SCHOOL</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/dashboard}" >Home</a>
+      </li>
+      <form class="d-flex" role="search" th:action="@{/questions}" name="keyword">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    </ul>
+  </div>
+</nav>
+</div>
+	<div class = "cont">
+		<div class = "row">
+			<h1>Score Board for Senior</h1>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-lg-3">
+				<a th:href ="@{/questions/new}" class = "btn btn-primary btn-sm mb-3">Add Student Score</a>
+			</div>
+		</div>
+		
+		<table class = "table table-bordered table-striped">
+			<thead class = "thead">
+				<tr>
+					<th scope="col">Seat Number</th>
+					<th scope="col" colspan="3">Mathematics</th>
+					<th scope="col" colspan="3">English</th>
+					<th scope="col" colspan="3">Physics</th>
+					<th scope="col" colspan="3">Chemistry</th>
+					<th scope="col" colspan="3">Biology</th>
+					<th scope="col" colspan="3">Economics</th>
+					<th scope="col" colspan="3">Book Keeping</th>
+					<th scope="col" colspan="3">Further Maths</th>
+					<th scope="col" colspan="3">Computer</th>
+					<th scope="col" colspan="3">Total</th>
+					<th scope="col" colspan="3">Actions</th>
+				</tr>
+				<tr>
+					<th scope="col"></th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">40</th>
+					<th scope="col">60</th>
+					<th scope="col">100</th>
+					<th scope="col">360</th>
+					<th scope="col">540</th>
+					<th scope="col">900</th>
+					
+					
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each = "question: ${questions}">
+					<td th:text = "${question.rollNo}"></td>
+					<td th:text = "${question.s1}"></td>
+					<td th:text = "${question.s2}"></td>
+					<td  class="table-primary" th:text = "${question.s3}"></td>
+					<td th:text = "${question.s4}"></td>
+					<td th:text = "${question.s5}"></td>
+					<td  class="table-primary" th:text = "${question.s6}"></td>
+					<td th:text = "${question.s7}"></td>
+					<td th:text = "${question.s8}"></td>
+					<td  class="table-primary" th:text = "${question.s9}"></td>
+					<td th:text = "${question.s10}"></td>
+					<td th:text = "${question.s11}"></td>
+					<td  class="table-primary" th:text = "${question.s12}"></td>
+					<td th:text = "${question.s13}"></td>
+					<td th:text = "${question.s14}"></td>
+					<td  class="table-primary" th:text = "${question.s15}"></td>
+					<td th:text = "${question.s16}"></td>
+					<td th:text = "${question.s17}"></td>
+					<td  class="table-primary" th:text = "${question.s18}"></td>
+					<td th:text = "${question.s19}"></td>
+					<td th:text = "${question.s20}"></td>
+					<td  class="table-primary" th:text = "${question.s21}"></td>
+					<td th:text = "${question.s22}"></td>
+					<td th:text = "${question.s23}"></td>
+					<td  class="table-primary" th:text = "${question.s24}"></td>
+					<td th:text = "${question.s25}"></td>
+					<td th:text = "${question.s26}"></td>
+					<td  class="table-primary" th:text = "${question.s27}"></td>
+					<td class="bg-success" th:text = "${question.s28}"></td>
+					<td class="bg-success" th:text = "${question.s29}"></td>
+					<td class="bg-success" th:text = "${question.s30}"></td>
+					<td>
+						<a th:href = "@{/questions/edit/{id}(id=${question.id})}" 
+						class = "btn btn-primary">Update</a><br><br>
+						
+						<a th:href = "@{/questions/{id}(id=${question.id})}" 
+						class = "btn btn-danger">Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+</body>
+</html>

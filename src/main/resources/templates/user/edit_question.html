@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Staff Management System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Staff Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/members}" >Staff Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+				<h1 class = "text-center"> Update new staff </h1>
+				<div class = "card-body">
+					<form th:action="@{/questions/{id} (id=${question.id})}" th:object = "${question}" method="post">
+						<div class ="form-group">
+							<label>Student Seat Number</label>
+							<input
+								type = "text"
+								name = "RollNo"
+								th:field = "*{RollNo}"
+								class = "form-control"
+								placeholder= "Enter Student's Seat Number"
+							/>
+							</div>
+							
+							<div class ="form-group">
+							<label> Mathematics Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S1" th:field = "*{S1}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S2" th:field = "*{S2}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S3" th:field = "*{S3}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> English Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S4" th:field = "*{S4}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S5" th:field = "*{S5}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S6" th:field = "*{S6}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> Physics Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S7" th:field = "*{S7}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S8" th:field = "*{S8}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S9" th:field = "*{S9}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> Chemistry Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S10" th:field = "*{S10}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S11" th:field = "*{S11}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S12" th:field = "*{S12}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> Biology Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S13" th:field = "*{S13}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S14" th:field = "*{S14}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S15" th:field = "*{S15}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> Economics Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S16" th:field = "*{S16}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S17" th:field = "*{S17}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S18" th:field = "*{S18}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> Book Keeping Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S19" th:field = "*{S19}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S20" th:field = "*{S20}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S21" th:field = "*{S21}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> Further Maths Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S22" th:field = "*{S22}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S23" th:field = "*{S23}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S24" th:field = "*{S24}" />
+    	</div>
+  	</div>
+  							</div>
+							
+							
+							
+							<div class ="form-group">
+							<label> Computer Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Test Score" name = "S25" th:field = "*{S25}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Exam Score" name = "S26" th:field = "*{S26}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total" name = "S27" th:field = "*{S27}" />
+    	</div>
+  	</div>
+  							</div>
+  							
+  							
+  							<div class ="form-group">
+							<label> Overall Total Score</label>
+	<div class="row">
+   		<div class="col">
+      		<input type="text" class="form-control" placeholder="Total Test Score" name = "S28" th:field = "*{S28}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="Total Exam Score" name = "S29" th:field = "*{S29}" />
+    	</div>
+    	<div class="col">
+      		<input type="text" class="form-control" placeholder="OverallTotal" name = "S30" th:field = "*{S30}" />
+    	</div>
+  	</div>
+  							</div>
+							
+						
+						<div class = "footer-body">
+						<button type = "submit" class = "btn btn-primary">
+						Submit
+						</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

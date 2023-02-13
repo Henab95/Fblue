@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+       <meta charset="UTF-8">
+    <title>Student Portal</title>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <style type="text/css">
+     
+     body{
+     	background-color:  #0b0e1ae8;	
+     	}
+     	.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+     	
+	.homeback h1{
+		color: white;
+		padding-top: 10vh;
+		font-size:700%;
+		text-align: center;
+	}
+	.homeback p{
+	color: white;
+	text-align: center;
+	font-size:150%;
+	}
+	.homeback h3{
+	color: white;
+	text-align: center;
+	font-size:300%;
+	}
+	.cardhead{
+		width:100%;
+		padding: 10%;
+	}
+	.cardhead2{
+		width:100%;
+		padding-left:5%;
+		padding-right: 5%;
+	}
+	.card{
+		background-color: #2b71c2b3;
+		color: white;
+	}
+	.card-header{
+		font-size: 200%;
+	}
+	.card-text{
+		font-size: 115%;
+	}
+	.card-more{
+		text-align: center;
+		font-size: 115%;
+	}
+	.dashhead{
+		background-color:  #2b71c2b3;
+		width: 100%;
+		height: 40%;
+		color: white;
+	}
+	.cardtt{
+		color: white;
+		font-size:130%;
+	}
+	.model h2{
+		text-align: center;
+		color: white;
+	}
+	.table{
+		color: white;
+	}
+	a:hover{
+		color:#0311d6e8;
+	}
+     </style>    
+       
+       
+</head>
+<body>
+        
+   <p sec:authorize="hasRole('ADMIN')">      
+        
+       <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#">BLUE LAND SCHOOLS</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+        <a class="nav-link" th:href="@{/admin/dashboard}" >Home</a>
+      </li>
+                <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/jssone|}" th:text="'JSS1'">Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/jsstwo|}" th:text="'JSS2'">Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/jssthree|}" th:text="'JSS3'">Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/ssone|}" th:text="'SS1'">Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/sstwo|}" th:text="'SS2'">Test</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/admin/ssthree|}" th:text="'SS3'">Test</a>
+            </li>
+            <li class="nav-item">
+        <a class="nav-link active" th:href="@{/logout}" >Logout</a>
+      </li>
+          </ul>
+      </nav>
+      <div class="cardhead">
+      <div class="card text-bg-primary mb-3">
+  <div class="card-header">Information</div>
+  <div class="card-body">
+    <p class="card-text">All questions will be available on the portal on by 2pm on Fridays</p>
+  </div>
+</div>
+<div class="card text-bg-info mb-3">
+  <div class="card-header">Date Of Submission</div>
+  <div class="card-body">
+    <p class="card-text">All drills should be submitted on or before 8:30am on Monday to the Subject Teacher</p>
+  </div>
+</div>
+</div>
+<div class="model">
+	<h2>MODELS OF THE WEEK</h2>
+</div>
+
+      <div class="cardhead2">
+     <table class="table table-bordered border-primary">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Second</th>
+      <th scope="col">Third</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">JSS1</th>
+      <td>Mark Edwin</td>
+      <td>Otto Catherine</td>
+      <td>Ayo Colins</td>
+    </tr>
+    <tr>
+      <th scope="row">JSS2</th>
+      <td>Jacob Folorunsho</td>
+      <td>Esther James</td>
+      <td>Fatimah Adejoke</td>
+    </tr>
+   <tr>
+      <th scope="row">JSS3</th>
+      <td>Ezekiel Jonah</td>
+      <td>Temi Sholarin</td>
+      <td>Chibuzor Ani</td>
+    </tr>
+    <tr>
+      <th scope="row">SS1</th>
+      <td>Gabriel Josiah</td>
+      <td>Isreal Houston</td>
+      <td>James Moss</td>
+    </tr>
+    <tr>
+      <th scope="row">SS2</th>
+      <td>Deitrick Haddon</td>
+      <td>Marvin Sapp</td>
+      <td>Tasha Cobbs</td>
+    </tr>
+    <tr>
+      <th scope="row">SS3</th>
+      <td>Rufai Salahudeen</td>
+      <td>Wole Adams</td>
+      <td>Joke Dayo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</body>
+</html>

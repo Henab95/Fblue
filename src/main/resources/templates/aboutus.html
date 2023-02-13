@@ -1,0 +1,262 @@
+<!--login.html-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+          
+                    
+                   <style type="text/css">
+         
+        *{
+    		margin: 0;
+    		padding: 0;
+			}
+		body{
+    		width: 100%;
+    
+			}
+			
+			.heading{
+    color: rgb(11, 12, 23);
+    text-align: center;
+    font-size:250%;
+}
+.navbar{
+     		background-color: #2b71c2b3;
+     	}
+     	.navbar-brand{
+     		font-size: 200%;
+     		font-family: Times New Roman;
+     		color:white;
+     	}
+     	.nav-link{
+     		font-size:150%;
+     		color: white;
+     	}
+     	.nav-link{
+     		text-align: right;
+     	}
+
+.clearfix{
+padding: 20px;
+}
+.clearfix p{
+	color: black;
+	font-size: 150%;
+}
+.clearfix img{
+height: 40vh;
+}
+.clearfix h3{
+	 border: 1px solid black;
+	 color: black;
+}
+.img-fluid{
+	width:100%;
+}
+.lead h3{
+	 border: 1px solid black;
+	 color: black;
+	 text-align: center;
+}
+
+#newd{
+    background-image:linear-gradient(135deg, rgba(172, 154, 56, 0.4) 0%,rgba(0,0,0,0.4) 
+    25%, rgba(0,23,149,0.6) 50%, rgba(255,0,0,0.6) 75%,rgba(0,23,149,0.6) 100%),url(images/abtback2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 300%;
+    text-align: left;
+   height: 50vh;
+    min-width: 700px;
+    max-width: 100%;
+    padding-top: 0;
+    margin-top: 0;
+}
+.row{
+    flex-basis: 38%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.row img{
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+#pic-array{
+    padding: 20px;
+    margin-top: 0;
+    display: flex;
+    width: 100%;
+}
+.row h3{
+	text-align: center;
+	padding: 20px;
+	padding-top:40px;
+}
+.row .inbt2{
+	padding-top: 4em;
+}
+.row .inbt3{
+	padding-top: 3em;
+}
+@media(max-width: 700px){
+    #newd h2{
+        font-size: 24px;
+    }
+    #newd{
+         min-height: 40vh;
+        max-height: 50vh;
+        min-width: 95%;
+        max-width: 95%;
+        font-size: 200%;
+        padding-top: 20%;
+        padding-left: 5%;
+    }
+}
+.navbar{
+margin-bottom: 0;
+}
+         
+         </style>
+          
+</head>
+<body>
+
+ <nav class="navbar">
+        <!-- Brand -->
+        <a class="navbar-brand" th:text="'BLUE LAND SCHOOLS'">BLUE LAND SCHOOLS</a>
+      
+      
+        <!-- Navbar links -->
+       
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/login|}" th:text="'Log in'">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/|}" th:text="'Home'">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" th:href="@{|/aboutus|}">About Us</a>
+            </li>
+          </ul>
+      </nav>
+      
+
+<div id="newd">
+       
+    </div>
+
+
+<div class="clearfix">
+  <img src="images/ceo2.jpg" class="col-md-6 float-md-end mb-3 ms-md-3" style="" alt="...">
+
+  <h3>THE CEO</h3>
+  <p>
+    A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
+  </p>
+
+  <p>
+    As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with some actual content in here, rather than just this boring placeholder text that goes on and on, but actually conveys no tangible information at. It simply takes up space and should not really be read.
+  </p>
+
+  <p>
+    And yet, here you are, still persevering in reading this placeholder text, hoping for some more insights, or some hidden easter egg of content. A joke, perhaps. Unfortunately, there's none of that here.
+  </p>
+</div>
+
+<div class="lead">
+	<h3>Laboratories</h3>
+</div>
+
+ <div id="pic-array">
+            <div class="row">
+                <img src="images/lab2.JPG" alt="">
+            </div>
+             <div class="row">
+               <h3 class="inbt">
+               Physics Lab <br>
+               Chemistry lab <br>
+               Biology Lab <br>
+               Agricultural Science Lab <br>
+               Food And Nut Lab <br>
+               Labs for junior classes
+               
+             </h3>
+            </div>
+            <div class="row">
+                <img src="images/lab1.JPG" alt="">
+            </div>
+        </div>        
+
+
+		<div id="pic-array">
+            <div class="row">
+                <img src="images/comp1.JPG" alt="">
+            </div>
+             <div class="row">
+               <h3 class="inbt2">
+            Extensive Computer and digital classes  
+             </h3>
+            </div>
+            <div class="row">
+                <img src="images/comp2.JPG" alt="">
+            </div>
+        </div>    
+        
+        
+        <div id="pic-array">
+            <div class="row">
+                <img src="images/lib1.JPG" alt="">
+            </div>
+             <div class="row">
+               <h3 class="inbt3">
+            Conducive Library
+            Adequate and Efficient Materials
+              
+             </h3>
+            </div>
+            <div class="row">
+                <img src="images/lib2.JPG" alt="">
+            </div>
+        </div>  
+        
+        
+  <div class="lead">
+	<h3>Sports</h3>
+</div>
+
+	<div id="pic-array">
+            <div class="row">
+                <img src="images/sportsoc.JPG" alt="">
+            </div>
+            <div class="row">
+                <img src="images/sportcheer.JPG" alt="">
+            </div>
+            <div class="row">
+                <img src="images/sportten.JPG" alt="">
+            </div>
+        </div> 
+        
+        <div id="pic-array">
+            <div class="row">
+                <img src="images/sportbs.JPG" alt="">
+            </div>
+            <div class="row">
+                <img src="images/sportst.JPG" alt="">
+            </div>
+            <div class="row">
+                <img src="images/sporttrack.JPG" alt="">
+            </div>
+        </div>         
+		
+</section>
+</body>
+</html>
